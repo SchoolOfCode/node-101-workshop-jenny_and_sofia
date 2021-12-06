@@ -1,26 +1,21 @@
-let myCollection = [
-    {
-      name: "School of Code mug",
-      count: 1,
-      whatILike: "It has my cute pixel character on it!"
-    },
-    {
-      name: "School of Code hat",
-      count: 2,
-      whatILike: "An often overlooked fashion accessory"
-    },
-    {
-      name: "School of Code pillow",
-      count: 1,
-      whatILike: "Eat. Sleep. Code. Repeat :)"
-    }
-  ];
+import myCollection from "./collection.js"
+
+import chalk from 'chalk';
+
   function describeItem(item){
-      if (item.count===1){console.log(`i have a ${item.name}.here's what i like about it: ${item.whatILike}`)}
+      if (item.count===1){console.log(`I have a ` + chalk.cyan(`${item.name}`) + `. Here's what i like about it:` + chalk.green(`${item.whatILike}`))}
     else {
-        console.log(`i have ${item.count} ${item.name}s here's what i like about them ${item.whatILike}`)
+        console.log(`i have ` + chalk.yellow(`${item.count}`) + chalk.cyan(` ${item.name}s`) + `Here's what i like about them: ` + chalk.green(`${item.whatILike}`))
     }
 }
+
+
+// console.log(chalk.blue('Hello world!'));
+
+// Make the name of each item in your collection cyan
+// Make the count of each item in your collection yellow
+// Make what you like about each item in your collection green
+
 describeItem(myCollection[0])
 
 function describeCollection(array){
